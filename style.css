@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+:root {
+  --Primary-Soft-orange: 35, 77%, 62%;
+  --Primary-Soft-red: 5, 85%, 63%;
+
+  --Neutral-Off-white: 36, 100%, 99%;
+  --Neutral-Grayish-blue: 233, 8%, 79%;
+  --Neutral-Dark-grayish-blue: 236, 13%, 42%;
+  --Neutral-Very-dark-blue: 240, 100%, 5%;
+
+  --font-familly-Inter: "Inter", sans-serif;
+}
+/*******************************************************
+                          CSS Reset
+  *******************************************************/
+/*
+    1. Use a more-intuitive box-sizing model.
+  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+      2. Remove default margin
+    */
+* {
+  margin: 0;
+}
+/*
+      3. Allow percentage-based heights in the application
+    */
+html,
+body {
+  height: 100%;
+}
+/*
+      Typographic tweaks!
+      4. Add accessible line-height
+      5. Improve text rendering
+    */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+      6. Improve media defaults
+    */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+      7. Remove built-in form typography styles
+    */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+      8. Avoid text overflows
+    */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+/*******************************************************
+                        Shared CSS
+*******************************************************/
+body {
+  font-family: var(--font-familly-Inter);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  min-height: 100dvh;
+  min-width: 100dvw;
+}
+
+/*******************************************************
+                        footer CSS
+*******************************************************/
+
+main {
+  display: grid;
+  grid-template-rows: 0.25fr 1fr 0.8fr 1fr;
+  grid-template-areas:
+    "alias-nav"
+    "alias-hero"
+    "alias-aside"
+    "alias-trend";
+  margin: 1rem;
+}
+/*******************************************************
+                        Navigation CSS
+*******************************************************/
+.navigation {
+  grid-area: alias-nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*******************************************************
+                    Main hero CSS
+*******************************************************/
+.main-hero {
+  grid-area: alias-hero;
+}
+.main-title {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.main-article {
+  font-weight: 400;
+  color: hsl(var(--Neutral-Dark-grayish-blue));
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.read-more {
+  border: none;
+  background-color: hsl(var(--Primary-Soft-red));
+  height: 3rem;
+  width: 11rem;
+  font-weight: 700;
+  color: hsl(var(--Neutral-Off-white));
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.main-image {
+  background-image: url(./assets/images/image-web-3-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50%;
+  width: 100%;
+}
+/*******************************************************
+                    articles-aside CSS
+*******************************************************/
+.articles-aside {
+  grid-area: alias-aside;
+  background-color: hsl(var(--Neutral-Very-dark-blue));
+  color: hsl(var(--Neutral-Off-white));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.articles-aside > h2 {
+  color: hsl(var(--Primary-Soft-orange));
+  font-weight: 800;
+  font-size: 2rem;
+}
+.arti-title {
+  font-weight: 700;
+  font-weight: 1.7rem;
+  color: hsl(var(--Neutral-Off-white));
+  padding-bottom: 0.8rem;
+}
+.arti-para {
+  color: hsl(var(--Neutral-Grayish-blue));
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.article1,
+.article2 {
+  border-bottom: 1px solid hsl(233, 8%, 79%);
+  padding-bottom: 2rem;
+}
+/*******************************************************
+                 trending-articles CSS
+*******************************************************/
+.trending-articles {
+  grid-area: alias-trend;
+  margin-top: 4rem;
+}
+.trending-articles > article {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.article-title {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-basis: 70%;
+  padding-left: 1rem;
+}
+.number-article {
+  color: hsl(var(--Neutral-Grayish-blue));
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.article-title > h4 {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.article-image {
+  flex-basis: 30%;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/*******************************************************
+                        Media Query CSS
+*******************************************************/
+@media (min-width: 600px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "alias-nav alias-nav alias-nav"
+      "alias-hero alias-hero alias-aside"
+      "alias-hero alias-hero alias-aside"
+      "alias-trend alias-trend alias-trend";
+    margin: 8%;
+    margin-top: 4%;
+  }
+  /*******************************************************
+                        Navigation CSS
+*******************************************************/
+  .navigation {
+    grid-area: alias-nav;
+  }
+  /*******************************************************
+                    Main hero CSS
+*******************************************************/
+  .main-hero {
+    grid-area: alias-hero;
+    margin-right: 2rem;
+  }
+
+  .nav > a {
+    padding-left: 2rem;
+  }
+  .main-article {
+    display: flex;
+    margin-top: 3.5rem;
+  	
+
+  }
+  .main-title {
+    flex-basis: 40%;
+    color: black;
+    font-size: 3.5rem;
+line-height: 3.5rem;
+  }
+  .main-arti {
+    flex-basis: 60%;
+  }
+  .main-image {
+    background-image: url(./assets/images/image-web-3-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 55%;
+    width: 100%;
+  }
+  /*******************************************************
+                        articles-aside CSS
+*******************************************************/
+  .articles-aside {
+    grid-area: alias-aside;
+  }
+  /*******************************************************
+                        trending-articles CSS
+*******************************************************/
+  .trending-articles {
+    grid-area: alias-trend;
+    display: flex;
+    justify-content: row;
+  }
+  .article-image > img {
+    height: 100%;
+  }
+  .attribution {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 100%;
+  }
+}
